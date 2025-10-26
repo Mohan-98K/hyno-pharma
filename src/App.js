@@ -23,6 +23,7 @@ import OrderCheckout from './components/OrderCheckout';
 import Advertisement from './components/Advertisement';
 import Category from './components/Category';
 import About from './About';
+import LandingPage from './components/LandingPage'; // ✅ Added this line
 import './App.css';
 
 function App() {
@@ -31,36 +32,47 @@ function App() {
       <CartProvider>
         <ToastProvider>
           <Router>
-            <div className="App">
-              <Header />
-              <SideNav />
-              <motion.main
-                className="main-content"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/user" element={<User />} />
-                  <Route path="/orders" element={<Orders />} />
-                  <Route path="/payments" element={<Payments />} />
-                  <Route path="/prescriptions" element={<Prescriptions />} />
-                  <Route path="/cart" element={<Cart />} />
-                  <Route path="/medicine" element={<Medicine />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/signup" element={<Signup />} />
-                  <Route path="/admin" element={<Admin />} />
-                  <Route path="/admin-login" element={<AdminLogin />} />
-                  <Route path="/checkout" element={<OrderCheckout />} />
-                  <Route path="/advertisement" element={<Advertisement />} />
-                  <Route path="/category" element={<Category />} />
-                  <Route path="/about" element={<About />} />
-                </Routes>
-              </motion.main>
-              <Footer />
-            </div>
+            <Routes>
+              {/* ✅ Landing page has no Header/SideNav/Footer */}
+              <Route path="/" element={<LandingPage />} />
+
+              {/* ✅ All other routes with layout */}
+              <Route
+                path="/*"
+                element={
+                  <div className="App">
+                    <Header />
+                    <SideNav />
+                    <motion.main
+                      className="main-content"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Routes>
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/products" element={<Products />} />
+                        <Route path="/user" element={<User />} />
+                        <Route path="/orders" element={<Orders />} />
+                        <Route path="/payments" element={<Payments />} />
+                        <Route path="/prescriptions" element={<Prescriptions />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/medicine" element={<Medicine />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<Signup />} />
+                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/admin-login" element={<AdminLogin />} />
+                        <Route path="/checkout" element={<OrderCheckout />} />
+                        <Route path="/advertisement" element={<Advertisement />} />
+                        <Route path="/category" element={<Category />} />
+                        <Route path="/about" element={<About />} />
+                      </Routes>
+                    </motion.main>
+                    <Footer />
+                  </div>
+                }
+              />
+            </Routes>
           </Router>
         </ToastProvider>
       </CartProvider>

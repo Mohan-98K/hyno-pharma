@@ -32,6 +32,13 @@ const Products = () => {
         { id: 6, name: 'Omeprazole 20mg', price: 9.99, category: 'Digestive Health', image: 'https://via.placeholder.com/200', rating: 4.7, inStock: true },
         { id: 7, name: 'Aspirin 75mg', price: 4.99, category: 'Pain Relief', image: 'https://via.placeholder.com/200', rating: 4.1, inStock: true },
         { id: 8, name: 'Multivitamin Tablets', price: 18.99, category: 'Vitamins', image: 'https://via.placeholder.com/200', rating: 4.4, inStock: true },
+        { id: 9, name: 'Loratadine 10mg', price: 6.99, category: 'Allergy', image: 'https://via.placeholder.com/200', rating: 4.5, inStock: true },
+        { id: 10, name: 'Metformin 500mg', price: 11.49, category: 'Diabetes', image: 'https://via.placeholder.com/200', rating: 4.6, inStock: true },
+        { id: 11, name: 'Hydrocortisone Cream', price: 9.99, category: 'Skin Care', image: 'https://via.placeholder.com/200', rating: 4.3, inStock: false },
+        { id: 12, name: 'Simvastatin 20mg', price: 14.99, category: 'Cholesterol', image: 'https://via.placeholder.com/200', rating: 4.7, inStock: true },
+        { id: 13, name: 'Lisinopril 10mg', price: 8.49, category: 'Blood Pressure', image: 'https://via.placeholder.com/200', rating: 4.2, inStock: true },
+        { id: 14, name: 'Azithromycin 250mg', price: 16.99, category: 'Antibiotics', image: 'https://via.placeholder.com/200', rating: 4.8, inStock: false },
+        { id: 15, name: 'Folic Acid 400mcg', price: 7.99, category: 'Vitamins', image: 'https://via.placeholder.com/200', rating: 4.5, inStock: true },
       ];
       setProducts(mockProducts);
       setFilteredProducts(mockProducts);
